@@ -1,16 +1,61 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import React, { Component } from 'react';
+import { Section } from './sectionTitle/sectionTitle';
+
+class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  upDateFeedback = type => {
+    this.setState(prevState => ({
+      [type]: prevState[type] + 1,
+    }));
+  };
+  onChangeGood = () => {
+    this.upDateFeedback('good');
+  };
+  onChangeNeutral = () => {
+    this.upDateFeedback('neutral');
+  };
+  onChangeBad = () => {
+    this.upDateFeedback('bad');
+  };
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+  };
+  render() {
+    const { good, neutral, bad } = this.state;
+    return (
+      <div>
+        <Section
+          // onLeaveFeedback={[
+          //   this.onChangeGood,
+          //   this.onChangeNeutral,
+          //   this.onChangeBad,
+          // ]}
+          options={[
+            { feedback: 'good', onChange: this.onChangeGood },
+            { feedback: 'neutral', onChange: this.onChangeNeutral },
+            { feedback: 'bad', onChange: this.onChangeBad },
+          ]}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          totalFeedback={this.countTotalFeedback()}
+          percentGood={this.countPositiveFeedbackPercentage()}
+          onChangeGood={this.onChangeGood}
+          onChangeNeutral={this.onChangeNeutral}
+          onChangeBad={this.onChangeBad}
+        />
+      </div>
+    );
+  }
+}
+export default App;
