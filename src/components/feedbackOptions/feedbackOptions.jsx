@@ -1,28 +1,17 @@
-export const FeedbackOptions = ({
-  options,
-  onLeaveFeedback,
-  good,
-  neutral,
-  bad,
-  onChangeGood,
-  onChangeNeutral,
-  onChangeBad,
-}) => {
+import { Btn } from './feedbackOptions.styled';
+
+export const FeedbackOptions = ({ options }) => {
   return (
     <div>
-      {/* <button type="button" onClick={onChangeGood}>
-        Good
-      </button>
-      <button type="button" onClick={onChangeNeutral}>
-        Neutral
-      </button>
-      <button type="button" onClick={onChangeBad}>
-        Bad
-      </button> */}
       {options.map((item, index) => (
-        <button type="button" key={index} onClick={item.onChange}>
+        <Btn
+          type="button"
+          key={index}
+          onClick={item.onChange}
+          bgColor={item.feedback}
+        >
           {item.feedback}
-        </button>
+        </Btn>
       ))}
     </div>
   );

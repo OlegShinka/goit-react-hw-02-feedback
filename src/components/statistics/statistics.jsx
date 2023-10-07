@@ -1,3 +1,5 @@
+import { List } from './statistics.styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -9,11 +11,11 @@ export const Statistics = ({
     <div>
       <h2>Statistics</h2>
       <ul>
-        <li>Good:{good}</li>
-        <li>Neutral:{neutral}</li>
-        <li>Bad:{bad}</li>
-        <li>Total:{totalFeedback}</li>
-        <li>Positive feedback:{percentGood}%</li>
+        <List>Good:{good}</List>
+        <List>Neutral:{neutral}</List>
+        <List>Bad:{bad}</List>
+        <List>Total:{totalFeedback}</List>
+        <List>Positive feedback:{percentGood}%</List>
       </ul>
     </div>
   );

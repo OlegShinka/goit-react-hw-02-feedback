@@ -1,3 +1,5 @@
+import { Paragraf } from './notification.styled';
+
 export const Notification = () => {
-  return <h2>There is no feedback</h2>;
+  return <Paragraf>There is no feedback</Paragraf>;
 };

@@ -26,7 +26,6 @@ class App extends Component {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
-
   countPositiveFeedbackPercentage = () => {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
@@ -35,11 +34,6 @@ class App extends Component {
     return (
       <div>
         <Section
-          // onLeaveFeedback={[
-          //   this.onChangeGood,
-          //   this.onChangeNeutral,
-          //   this.onChangeBad,
-          // ]}
           options={[
             { feedback: 'good', onChange: this.onChangeGood },
             { feedback: 'neutral', onChange: this.onChangeNeutral },

@@ -19,7 +19,6 @@ export const Section = ({
       <h2>Please leave feedback</h2>
       <FeedbackOptions
         options={options}
-        onLeaveFeedback={onLeaveFeedback}
         good={good}
         neutral={neutral}
         bad={bad}
