@@ -13,6 +13,7 @@ class App extends Component {
       [type]: prevState[type] + 1,
     }));
   };
+  onChange = () => {};
   onChangeGood = () => {
     this.upDateFeedback('good');
   };
@@ -39,6 +40,7 @@ class App extends Component {
           //   { feedback: 'neutral', onChange: this.onChangeNeutral },
           //   { feedback: 'bad', onChange: this.onChangeBad },
           // ]}
+          onLeaveFeedback={this.upDateFeedback}
           options={['good', 'neutral', 'bad']}
           good={good}
           neutral={neutral}
