@@ -34,11 +34,12 @@ class App extends Component {
     return (
       <div>
         <Section
-          options={[
-            { feedback: 'good', onChange: this.onChangeGood },
-            { feedback: 'neutral', onChange: this.onChangeNeutral },
-            { feedback: 'bad', onChange: this.onChangeBad },
-          ]}
+          // options={[
+          //   { feedback: 'good', onChange: this.onChangeGood },
+          //   { feedback: 'neutral', onChange: this.onChangeNeutral },
+          //   { feedback: 'bad', onChange: this.onChangeBad },
+          // ]}
+          options={['good', 'neutral', 'bad']}
           good={good}
           neutral={neutral}
           bad={bad}
