@@ -7,6 +7,7 @@ export const Btn = styled.button`
   cursor: pointer;
   margin: 10px;
   border-radius: 8px;
+
   background-color: ${props => {
     if (props.bgColor === 'good') {
       return 'green';
@@ -15,7 +16,4 @@ export const Btn = styled.button`
       return 'yellow';
     } else return 'red';
   }};
-  :hover {
-    background-color: #e6dfdf;
-  }
 `;
